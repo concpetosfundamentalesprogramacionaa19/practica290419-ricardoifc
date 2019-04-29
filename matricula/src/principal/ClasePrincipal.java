@@ -63,8 +63,6 @@ Scanner entrada = new Scanner(System.in);
     System.out.printf("Descuento por ciudad: %2.f\nDesucento por edad: %2.f\n"
        + "Descuento por estado civil%2.fDescuento por cargas familiares%.2f\n"
             + "",total);
-    
-            
 }
     
 }
