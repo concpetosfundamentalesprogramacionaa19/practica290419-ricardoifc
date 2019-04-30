@@ -11,10 +11,9 @@ import principal.ClasePrincipal;
  * @author Ricardo Freire
  */
 public class Porcentajes {
-    public static float ciudad = (float) (ClasePrincipal.matricula *0.20);
-    public static float edad = (float) (ClasePrincipal.matricula *0.10);
-    public static float civil = (float) (ClasePrincipal.matricula *0.05);
-    public static float cargoFamiliares = (float) (ClasePrincipal.matricula *0.03);
-    public static float tramite = (float) (ClasePrincipal.total *0.02);
+public static float ciudad = (float) (ClasePrincipal.matricula *0.20);
+public static float edad = (float) (ClasePrincipal.matricula *0.10);
+public static float civil = (float) (ClasePrincipal.matricula *0.05);
+public static float cargoFamiliares = (float) (ClasePrincipal.matricula *0.03);
        
 }

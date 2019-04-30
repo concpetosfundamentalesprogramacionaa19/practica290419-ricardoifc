@@ -13,7 +13,6 @@ import paquete1.Porcentajes;
 public class ClasePrincipal {
     // declaro un public static para la variable matricula
     public static double matricula=1330;
-        public static double total;
     public static void main(String[] arg){
 Scanner entrada = new Scanner(System.in);
     // declaro mis variables
@@ -22,11 +21,12 @@ Scanner entrada = new Scanner(System.in);
     float porEstadoCivil = 0;
     float porCargaFamiliar  = 0;
     float porTramite = 0;
+    float total = 0;
     float totalFinal;
     int aux = 0; // creo un auxiliar
     String auxS = null;
     // la ciudad
-    System.out.println("Usted es de la ciudad de Zamora o Loja");
+    System.out.println("Que ciudad es: ");
     auxS=entrada.next();
     if(auxS.equals("Loja") || auxS.equals("Zamora")){
         porCiudad = (Porcentajes.ciudad);
@@ -50,19 +50,21 @@ Scanner entrada = new Scanner(System.in);
     entrada.nextLine();
     System.out.println("¿Cuantas cargas familiares tiene?");
     aux=entrada.nextInt();
-    if (aux<1){
+    if (aux>=1){
         porCargaFamiliar = (Porcentajes.cargoFamiliares);
         }
     // tramites administrativos
-    total = porCiudad + porEdad + porEstadoCivil + porCargaFamiliar;
-    porTramite = +(Porcentajes.tramite);
-    
+    total = (float) (matricula-(porCiudad + porEdad + porEstadoCivil
+            + porCargaFamiliar));
+    System.out.printf("Valor de matricula: %.2f\n"
+            + "SubTotal: %.2f\n",matricula,total);
+    porTramite = (float) (total*0.02);    
     //total
-    totalFinal = (float) (total -(porCiudad + porEdad + porEstadoCivil + 
-            porCargaFamiliar + porTramite));
-    System.out.printf("Descuento por ciudad: %2.f\nDesucento por edad: %2.f\n"
-       + "Descuento por estado civil%2.fDescuento por cargas familiares%.2f\n"
-            + "",total);
+    totalFinal = (float) (total + porTramite);
+    System.out.printf("Descuento por ciudad: %.2f\nDesucento por edad: %.2f\n"
+       + "Descuento por estado civil: %.2f\nDescuento por cargas familiares"
+            + "%.2f\nCosto de tramites: %.2f\nTotal: %.2f"
+       ,porCiudad,porEdad,porEstadoCivil,porCargaFamiliar,porTramite,totalFinal);
 }
     
 }
